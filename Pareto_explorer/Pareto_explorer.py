@@ -1,5 +1,5 @@
-from pareto_dominance import pareto_dominance
-import dashboard
+from .pareto_dominance import pareto_dominance
+from .dashboard import dashboard
 
 class pareto_explorer:
 
