@@ -16,15 +16,17 @@ class dashboard:
     self.app = Dash(__name__)
     self.fig = self.plot.configure(rank,idx_rank)
     self.register_callback()
+    self.thread = None
 
 
 
  def execute(self, rank_version = 1):
 
-  thread = threading.Thread(target=self.run, daemon=True)
-  thread.start()
-  url = eval_js("google.colab.kernel.proxyPort(8050)")
-  print(url)
+  if self.thread is None or not self.thread.is_alive():
+    self.thread = threading.Thread(target=self.run, daemon=True)
+    self.thread.start()
+    url = eval_js("google.colab.kernel.proxyPort(8050)")
+    print(url)
 
 
  def build(self):
