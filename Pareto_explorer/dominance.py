@@ -1,3 +1,5 @@
+import numpy as np
+
 class dominance:
 
  def comparation(self,arr, target):

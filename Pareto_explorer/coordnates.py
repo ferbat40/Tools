@@ -3,6 +3,7 @@ import numpy as np
 import ipywidgets as widgets
 from IPython.display import display
 from plotly.graph_objs import FigureWidget
+import numpy as np
 
 class coordnates:
 
