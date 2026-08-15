@@ -3,8 +3,8 @@ import plotly.graph_objects as go
 
 class plot_3D:
 
-     def __init__(self, benk, axis):
-         self.experiments=benk
+     def __init__(self, axis):
+         #self.experiments=benk
          self.axis = axis
 
 

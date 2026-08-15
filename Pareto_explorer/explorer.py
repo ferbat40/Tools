@@ -3,15 +3,15 @@ from .dashboard import dashboard
 
 class explorer:
 
-  def __init__(self,population,exp):
-    self.population = population
-    self.exp = exp
+  def __init__(self,objectives,variables):
+    self.objectives = objectives
+    self.variables = variables
 
   def executing(self):
 
     pareto = dominance()
-    ranks = pareto.rank_pareto(self.population)
-    idx_rank = list(dict.fromkeys(pareto.idx_rank(self.population,ranks)))
+    ranks = pareto.rank_pareto(self.objectives)
+    idx_rank = list(dict.fromkeys(pareto.idx_rank(self.objectives,ranks)))
     idx_aux = pareto.associate_rank(ranks,idx_rank)
-    db = dashboard(ranks,idx_aux,self.exp)
+    db = dashboard(ranks,idx_aux,self.variables)
     db.execute()

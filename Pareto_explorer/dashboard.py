@@ -8,12 +8,11 @@ import plotly.graph_objects as go
 
 class dashboard:
 
- def __init__(self,rank,idx_rank,exp):
+ def __init__(self,rank,idx_rank,variables):
     self.rank = rank
     self.idx_rank = idx_rank
-    self.exp = exp
-    self.plot = plot_3D(exp,[0,1,2])
-    self.coordenate = coordnates(exp)
+    self.plot = plot_3D([0,1,2])
+    self.coordenate = coordnates(variables)
     self.app = Dash(__name__)
     self.fig = self.plot.configure(rank,idx_rank)
     self.register_callback()
