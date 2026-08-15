@@ -1,3 +1,6 @@
+import pareto_dominance
+import dashboard
+
 class pareto_explorer:
 
   def __init__(self,population):
