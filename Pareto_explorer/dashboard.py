@@ -83,6 +83,4 @@ class dashboard:
    if clickData is None:
     return go.Figure()
 
-
-
    return self.coordenate.configure(clickData['points'][0]['customdata'])
