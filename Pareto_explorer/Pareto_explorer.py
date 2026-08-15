@@ -1,4 +1,4 @@
-import pareto_dominance
+from .pareto_dominance import pareto_dominance
 import dashboard
 
 class pareto_explorer:
