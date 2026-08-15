@@ -11,7 +11,7 @@ class dashboard:
     self.rank = rank
     self.idx_rank = idx_rank
     self.plot = plot_3D(exp,[0,1,2])
-    self.coordenate = coordnates()
+    self.coordenate = coordnates(exp)
     self.app = Dash(__name__)
     self.fig = self.plot.configure(rank,idx_rank)
     self.register_callback()
