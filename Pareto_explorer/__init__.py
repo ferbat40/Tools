@@ -1,2 +1,2 @@
-from pareto_explorer import pareto_explorer
+from Pareto_explorer import pareto_explorer
 
