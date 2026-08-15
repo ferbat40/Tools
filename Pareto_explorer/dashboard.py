@@ -4,6 +4,9 @@ from google.colab.output import eval_js
 from .plot_3D import plot_3D
 from .coordnates import coordnates
 import plotly.graph_objects as go
+import socket
+import threading
+
 
 
 class dashboard:
@@ -16,17 +19,15 @@ class dashboard:
     self.app = Dash(__name__)
     self.fig = self.plot.configure(rank,idx_rank)
     self.register_callback()
-    self.thread = None
 
 
 
  def execute(self, rank_version = 1):
-
-  if self.thread is None or not self.thread.is_alive():
-    self.thread = threading.Thread(target=self.run, daemon=True)
-    self.thread.start()
-    url = eval_js("google.colab.kernel.proxyPort(8050)")
-    print(url)
+  port  = self.get_free_port()
+  thread = threading.Thread(target=self.run, daemon=True)
+  thread.start()
+  url = eval_js(f"google.colab.kernel.proxyPort({port})")
+  print(url)
 
 
  def build(self):
