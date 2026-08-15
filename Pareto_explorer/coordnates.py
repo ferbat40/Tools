@@ -7,9 +7,14 @@ import numpy as np
 
 class coordnates:
 
+ def __init__(self, exp):
+          self.exp=exp
+     
+
+
  def configure(self, idx = None):
   if idx is not None:
-    pop = exp.pop().variables
+    pop =  self.exp.pop().variables
     var = np.array([pop[idx-i]   for i in range(0,10)   ]  )
 
     arr = [

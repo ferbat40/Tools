@@ -7,7 +7,7 @@ from .coordnates import coordnates
 
 class dashboard:
 
- def __init__(self,rank,idx_rank):
+ def __init__(self,rank,idx_rank,exp):
     self.rank = rank
     self.idx_rank = idx_rank
     self.plot = plot_3D(exp,[0,1,2])

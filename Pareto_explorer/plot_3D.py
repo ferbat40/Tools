@@ -1,3 +1,5 @@
+import numpy as np
+
 class plot_3D:
 
      def __init__(self, benk, axis):
