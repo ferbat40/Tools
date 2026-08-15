@@ -21,6 +21,13 @@ class dashboard:
     self.register_callback()
 
 
+ def get_free_port(self):
+        sock = socket.socket()
+        sock.bind(("0.0.0.0", 0))
+        port = sock.getsockname()[1]
+        sock.close()
+        return port
+ 
 
  def execute(self, rank_version = 1):
   port  = self.get_free_port()
