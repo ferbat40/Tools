@@ -1,4 +1,4 @@
-class pareto_dominance:
+class dominance:
 
  def comparation(self,arr, target):
   cd1 = np.all (arr[target] <= arr , axis = 1)

@@ -1,4 +1,4 @@
-from .dominance import pareto_dominance
+from .dominance import dominance
 from .dashboard import dashboard
 
 class explorer:
@@ -8,7 +8,7 @@ class explorer:
 
   def executing(self):
 
-    pareto = pareto_dominance()
+    pareto = dominance()
     ranks = pareto.rank_pareto(self.population)
     idx_rank = list(dict.fromkeys(pareto.idx_rank(self.population,ranks)))
     idx_aux = pareto.associate_rank(ranks,idx_rank)

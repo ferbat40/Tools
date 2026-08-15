@@ -1,8 +1,8 @@
 from dash import Dash, html, dcc, Input, Output
 import threading
 from google.colab.output import eval_js
-import plot_3D
-import coordnates
+from .plot_3D import plot_3D
+from .coordnates import coordnates
 
 
 class dashboard:
