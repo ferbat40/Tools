@@ -3,6 +3,7 @@ import threading
 from google.colab.output import eval_js
 from .plot_3D import plot_3D
 from .coordnates import coordnates
+import plotly.graph_objects as go
 
 
 class dashboard:
@@ -10,6 +11,7 @@ class dashboard:
  def __init__(self,rank,idx_rank,exp):
     self.rank = rank
     self.idx_rank = idx_rank
+    self.exp = exp
     self.plot = plot_3D(exp,[0,1,2])
     self.coordenate = coordnates(exp)
     self.app = Dash(__name__)
@@ -67,7 +69,7 @@ class dashboard:
             prevent_initial_call=True)
 
   def update_pareto(_):
-   plot = plot_3D(exp,[0,1,2])
+   plot = plot_3D(self.exp,[0,1,2])
 
    return plot.configure(self.rank,self.idx_rank)
 
