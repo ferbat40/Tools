@@ -1,7 +1,7 @@
-from .pareto_dominance import pareto_dominance
+from .dominance import pareto_dominance
 from .dashboard import dashboard
 
-class pareto_explorer:
+class explorer:
 
   def __init__(self,population):
     self.population = population
