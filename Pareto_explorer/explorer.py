@@ -8,7 +8,7 @@ class explorer:
     self.variables = variables
 
 
-  def show(self):
+  def execute(self):
     pareto = dominance()
     ranks = pareto.rank_pareto(self.objectives)
     idx_rank = list(dict.fromkeys(pareto.idx_rank(self.objectives,ranks)))
