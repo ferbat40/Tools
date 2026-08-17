@@ -23,7 +23,7 @@ class plot_3D:
                  x=ax, y=ay, z=az,
                  mode='markers',
                  customdata = idx_aux[vet_pt],
-                 marker=dict(size = 3),
+                 marker=dict(size = 8),
                  name=f'Rank {vet_pt + 1 }',
                  showlegend=True,
                  hovertemplate =
