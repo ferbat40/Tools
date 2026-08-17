@@ -31,7 +31,7 @@ class dashboard:
 
  def execute(self, rank_version = 1):
   port  = self.get_free_port()
-  thread = threading.Thread(target=self.run, daemon=True)
+  thread = threading.Thread(target=self.run, args =(port,),daemon=True)
   thread.start()
   url = eval_js(f"google.colab.kernel.proxyPort({port})")
   print(url)
@@ -60,10 +60,10 @@ class dashboard:
      )
 
 
- def run(self):
+ def run(self,port):
     self.app.run(
         host='0.0.0.0',
-        port=8050,
+        port=port,
         debug=False,
         use_reloader=False
     )
